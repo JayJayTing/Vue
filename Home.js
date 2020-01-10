@@ -1,7 +1,8 @@
 new Vue({
   el: '#app',
   data: {
-    title: 'test'
+    title: 'test',
+    link: 'http://www.google.com'
   },
   methods: {
     changeTitle: function(e) {
@@ -9,6 +10,9 @@ new Vue({
     },
     sayHello: function() {
       return this.title;
+    },
+    hello: function() {
+      console.log('testing');
     }
   }
 });

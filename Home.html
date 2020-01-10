@@ -9,8 +9,11 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" v-on:input="changeTitle" />
-      <p>{{title}} {{sayHello()}}</p>
+      <input type="text" v-on:input="changeTitle" v-on:click="hello" />
+      <p>
+        {{title}} {{sayHello()}}
+        <a v-bind:href="link">Google</a>
+      </p>
     </div>
     <script src="Home.js"></script>
   </body>
