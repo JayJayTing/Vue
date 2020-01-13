@@ -8,7 +8,7 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div id="app" v-on:mousemove="updateCoordinates">
+		<div id="app">
 			<h1 v-once>{{title}}</h1>
 			<input type="text" v-on:input="changeTitle" v-on:click="hello" />
 			<p>
@@ -19,11 +19,18 @@
 			<div v-html="finishedLink"></div>
 			<button v-on:click="increase(3, $event)">increase</button>
 			<div>{{count}}</div>
-			<div>
+
+			<div v-on:mousemove="updateCoordinates">
 				Mouse coordinates: x - {{x}} y - {{y}}
 				<span v-on:mouseMove.stop="">DESIRED DEADSPOT</span>
 			</div>
-			<input type="text" v-on:keyup.enter.space="alertMe" />
+			<div>
+				<input type="text" v-on:keyup.enter.space="alertMe" />
+			</div>
+			<div>
+				<p>{{twoWayBinding}}</p>
+				<input type="text" v-model="twoWayBinding" />
+			</div>
 		</div>
 		<script src="./Home.js"></script>
 	</body>

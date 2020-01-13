@@ -1,6 +1,7 @@
 new Vue({
 	el: "#app",
 	data: {
+		twoWayBinding: "twoWayBinding",
 		title: "test",
 		count: 0,
 		link: "http://www.google.com",
