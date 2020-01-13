@@ -21,13 +21,23 @@ new Vue({
 		hello: function() {
 			console.log("testing");
 		},
-		increase() {
-			return this.count++;
+		increase(number, event) {
+			console.log("i think this is working");
+			console.log(event.target.value);
+			return (this.count += number);
 		},
 		updateCoordinates: function(e) {
 			this.x = e.clientX;
 			this.y = e.clientY;
+			e.stopPropagation();
+		},
+		alertMe() {
+			alert("Alert");
 		}
+		// dummy: function(e) {
+		// 	e.stopPropagation();
+		// }
+		//this last function can be omitted by adding v-on:something.stop -- the keyword is the .stop. you also need "" empty string also a keyword
 	}
 });
 

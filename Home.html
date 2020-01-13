@@ -17,12 +17,14 @@
 			</p>
 			<p v-html="finishedLink"></p>
 			<div v-html="finishedLink"></div>
-			<button v-on:click="increase">increase</button>
+			<button v-on:click="increase(3, $event)">increase</button>
 			<div>{{count}}</div>
 			<div>
 				Mouse coordinates: x - {{x}} y - {{y}}
+				<span v-on:mouseMove.stop="">DESIRED DEADSPOT</span>
 			</div>
+			<input type="text" v-on:keyup.enter.space="alertMe" />
 		</div>
-		<script src="Home.js"></script>
+		<script src="./Home.js"></script>
 	</body>
 </html>
