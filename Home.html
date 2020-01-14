@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script src="./vue.js"></script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Document</title>
-	</head>
-	<body>
-		<div id="app">
-			<h1 v-once>{{title}}</h1>
-			<input type="text" v-on:input="changeTitle" v-on:click="hello" />
-			<p>
-				{{title}} {{sayHello()}}
-				<a v-bind:href="link">Google</a>
-			</p>
-			<p v-html="finishedLink"></p>
-			<div v-html="finishedLink"></div>
-			<button v-on:click="increase(3, $event)">increase</button>
-			<div>{{count}}</div>
+  <head>
+    <script src="./vue.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-once>{{title}}</h1>
+      <input type="text" v-on:input="changeTitle" v-on:click="hello" />
+      <p>
+        {{title}} {{sayHello()}}
+        <a v-bind:href="link">Google</a>
+      </p>
+      <p v-html="finishedLink"></p>
+      <div v-html="finishedLink"></div>
+      <button v-on:click="increase(3, $event)">increase</button>
+      <div>{{count}}</div>
 
-			<div v-on:mousemove="updateCoordinates">
-				Mouse coordinates: x - {{x}} y - {{y}}
-				<span v-on:mouseMove.stop="">DESIRED DEADSPOT</span>
-			</div>
-			<div>
-				<input type="text" v-on:keyup.enter.space="alertMe" />
-			</div>
-			<div>
-				<p>{{twoWayBinding}}</p>
-				<input type="text" v-model="twoWayBinding" />
-			</div>
-		</div>
-		<script src="./Home.js"></script>
-	</body>
+      <div v-on:mousemove="updateCoordinates">
+        Mouse coordinates: x - {{x}} y - {{y}}
+        <span v-on:mouseMove.stop="">DESIRED DEADSPOT</span>
+      </div>
+      <div>
+        <input type="text" v-on:keyup.enter.space="alertMe" />
+      </div>
+      <div>
+        <p>{{twoWayBinding}}</p>
+        <input type="text" v-model="twoWayBinding" />
+      </div>
+      <div>
+        Computed Example
+        <button v-on:click="count++">Add Count</button>
+        <div>{{cached}} -- {{count}}</div>
+      </div>
+    </div>
+    <script src="./Home.js"></script>
+  </body>
 </html>
